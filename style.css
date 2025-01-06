@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+}
+
+/* Header */
+header {
+  width: 100%;
+  height: 100vh;
+  background-image: url(images/bg-image.jpg),
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.header-content {
+  color: white;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  top: 45%; /* Posisikan di tengah vertikal */
+  left: 80%; /* Posisikan di tengah horizontal */
+  transform: translate(-50%, -50%); /* Biar presisi di tengah */
+  text-align: center; /* Biar teks di tengah */
+}
+
+.header-content h1 {
+  font-family: "Poppins", serif;
+  font-size: 2rem; /* Atur ukuran font agar besar */
+  line-height: 1.2; /* Supaya jarak antar baris teks agak lebih rapat */
+  margin-bottom: 20px; /* Jarak antara h1 dan button */
+}
+
+button {
+  font-family: "Poppins", serif;
+  font-weight: bold;
+  background-color: #0a0a23;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1rem; /* Biar tombol lebih gede */
+  transition: all 0.3s ease; /* Smooth efek */
+}
+
+button a {
+  color: #fff;
+  text-decoration: none;
+}
+
+button:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Shadow efek */
+  transform: scale(1.05); /* Tombol sedikit membesar */
+}
+
+button a:hover {
+  color: orange;
+}
+
+/* Navbar */
+nav {
+  font-family: "Poppins", serif;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  color: white;
+  padding: 20px;
+}
+
+nav a,
+.logo {
+  color: white;
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+ul li a {
+  transition: all 0.5s ease;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li a:hover {
+  color: orange;
+  border-bottom: 2px solid orange;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: white;
+}
+
+/* Menu tampil saat hamburger diaktifkan */
+.nav-active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  right: 5px;
+  background-color: black;
+  padding: 10px;
+  border-radius: 20px;
+  z-index: 10;
+  width: 50%;
+  transition-timing-function: ease-in;
+}
+
+.nav-active li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 0;
+  display: block;
+}
+
+/* Animasi buat menu item */
+@keyframes navItemFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Main */
+.categories-title {
+  font-family: "Poppins", serif;
+  text-align: center;
+  padding: 20px;
+}
+
+.categories-container {
+  display: grid; /* Susun artikel sejajar */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* Jarak antar card */
+}
+
+article {
+  background-color: #1a1a1a; /* Warna background card */
+  border: 1px solid #333; /* Border biar keliatan kayak frame */
+  border-radius: 10px; /* Rounded corner */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow buat efek card */
+  padding: 20px; /* Jarak konten ke pinggiran card */
+  margin: 20px; /* Jarak antar card */
+  text-align: center; /* Tengahin konten di dalam card */
+  max-width: 500px; /* Batas lebar card */
+  display: inline-block; /* Biar card bisa sejajar */
+  color: white; /* Warna teks */
+}
+
+article h2 {
+  font-family: "Poppins", serif;
+  font-size: 1.3rem; /* Ukuran font judul */
+  padding-bottom: 10px;
+}
+
+article img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Biar gambar nggak gepeng */
+  border: 3px solid black;
+}
+
+/* Footer */
+footer {
+  font-family: "Poppins", serif;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Media Queries */
+/* Mobile */
+@media (max-width: 570px) {
+  header {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .header-content {
+    top: 40%; /* Posisikan di tengah vertikal */
+    left: 80%; /* Posisikan di tengah horizontal */
+  }
+
+  button {
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+  nav ul {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    padding-right: 10px;
+  }
+  .nav-active {
+    display: flex;
+  }
+
+  .header-content h1 {
+    font-size: 1rem;
+  }
+
+  .categories-title {
+    font-size: 0.8rem;
+    padding: 20px 0;
+  }
+
+  .categories-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+
+  article h2 {
+    font-size: 1rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+}
